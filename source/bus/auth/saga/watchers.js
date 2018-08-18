@@ -24,5 +24,11 @@ function* watchLogout () {
 }
 
 export function* watchAuth () {
-    yield all([call(watchSignup), call(watchLogin), call(watchAuthenticate), call(watchInitialize), call(watchLogout)]);
+    yield all([
+        call(watchSignup),
+        call(watchLogin),
+        call(watchAuthenticate),
+        call(watchInitialize),
+        call(watchLogout)
+    ]);
 }

@@ -24,5 +24,11 @@ function* watchUnlikePost () {
 }
 
 export function* watchPosts () {
-    yield all([call(watchCreatePost), call(watchFetchPosts), call(watchRemovePost), call(watchLikePost), call(watchUnlikePost)]);
+    yield all([
+        call(watchCreatePost),
+        call(watchFetchPosts),
+        call(watchRemovePost),
+        call(watchLikePost),
+        call(watchUnlikePost)
+    ]);
 }
