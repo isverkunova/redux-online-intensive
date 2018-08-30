@@ -1,5 +1,6 @@
 // Core
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import cx from 'classnames';
@@ -9,15 +10,25 @@ import Styles from './styles.m.css';
 import { newPassword } from '../../bus/forms/shapes';
 import { book } from '../../navigation/book';
 
-export default class NewPassword extends Component {
-    static defaultProps = {
-        // State
-        isFetching: false,
+// Actions
+import { profileActions } from '../../bus/profile/actions';
 
-        // Actions
-        updatePasswordAsync: () => {},
+const mapStateToProps = (state) => {
+    return {
+        isFetching: state.ui.get('isFetching'),
+        profile:    state.profile,
     };
+};
 
+const mapDispatchToProps = {
+    updatePasswordAsync: profileActions.updatePasswordAsync,
+};
+
+@connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
+export default class NewPassword extends Component {
     _submitPassword = (passwordData) => {
         const { updatePasswordAsync } = this.props;
 
