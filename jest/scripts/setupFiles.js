@@ -42,6 +42,16 @@ const fetchResponseSuccess = {
     json:   jest.fn(() => Promise.resolve(responseDataSuccess)),
 };
 
+const responseUsersDataSuccess = {
+    data:    users,
+    message: successMesasge,
+};
+
+const fetchUsersResponseSuccess = {
+    status: 200,
+    json:   jest.fn(() => Promise.resolve(responseUsersDataSuccess)),
+};
+
 const fetchResponseFail401 = {
     status: 401,
     json:   jest.fn(() => Promise.resolve(responseDataFail)),
@@ -76,6 +86,8 @@ global.__ = {
     fetchResponseSuccess,
     fetchResponseFail401,
     fetchResponseFail400,
+    fetchUsersResponseSuccess,
+    responseUsersDataSuccess,
     credentials,
     url,
     users,
