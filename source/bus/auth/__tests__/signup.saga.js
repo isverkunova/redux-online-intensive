@@ -59,52 +59,52 @@ describe('signup saga:', () => {
         test('should dispatch "fillProfile" action', () => {
             expect(saga.next(__.responseDataSuccess).value)
                 .toMatchInlineSnapshot(`
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "payload": Object {
-        "avatar": "TEST_AVATAR",
-        "firstName": "Walter",
-        "id": "TEST_ID",
-        "lastName": "White",
-        "token": "TEST_TOKEN",
-      },
-      "type": "FILL_PROFILE",
-    },
-    "channel": null,
-  },
-}
-`);
+                    Object {
+                        "@@redux-saga/IO": true,
+                        "PUT": Object {
+                            "action": Object {
+                            "payload": Object {
+                                "avatar": "TEST_AVATAR",
+                                "firstName": "Walter",
+                                "id": "TEST_ID",
+                                "lastName": "White",
+                                "token": "TEST_TOKEN",
+                            },
+                            "type": "FILL_PROFILE",
+                            },
+                            "channel": null,
+                        },
+                    }
+                `);
         });
     });
 
     test('should dispatch "authenticate" action', () => {
         expect(saga.next().value).toMatchInlineSnapshot(`
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "type": "AUTHENTICATE",
-    },
-    "channel": null,
-  },
-}
-`);
+            Object {
+                "@@redux-saga/IO": true,
+                "PUT": Object {
+                    "action": Object {
+                    "type": "AUTHENTICATE",
+                    },
+                    "channel": null,
+                },
+            }
+        `);
     });
 
     test('should dispatch "stopFetching" action', () => {
         expect(saga.next().value).toMatchInlineSnapshot(`
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "type": "STOP_FETCHING",
-    },
-    "channel": null,
-  },
-}
-`);
+            Object {
+                "@@redux-saga/IO": true,
+                "PUT": Object {
+                    "action": Object {
+                    "type": "STOP_FETCHING",
+                    },
+                    "channel": null,
+                },
+            }
+        `);
     });
 
     test('should finish', () => {

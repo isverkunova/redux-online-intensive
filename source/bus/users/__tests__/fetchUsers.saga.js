@@ -58,38 +58,37 @@ describe('fetchUsers saga:', () => {
         });
 
         test('should dispatch "fillUsers" action', () => {
-            expect(saga.next(__.responseUsersDataSuccess).value)
-                .toMatchInlineSnapshot(`
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "payload": Object {
-        "avatar": "TEST_AVATAR",
-        "firstName": "TEST_FIRSTNAME",
-        "id": "TEST_ID",
-        "lastName": "TEST_LASTNAME",
-      },
-      "type": "FILL_USERS",
-    },
-    "channel": null,
-  },
-}
-`);
+            expect(saga.next(__.responseUsersDataSuccess).value).toMatchInlineSnapshot(`
+                Object {
+                    "@@redux-saga/IO": true,
+                    "PUT": Object {
+                        "action": Object {
+                        "payload": Object {
+                            "avatar": "TEST_AVATAR",
+                            "firstName": "TEST_FIRSTNAME",
+                            "id": "TEST_ID",
+                            "lastName": "TEST_LASTNAME",
+                        },
+                        "type": "FILL_USERS",
+                        },
+                        "channel": null,
+                    },
+                }
+            `);
         });
 
         test('should dispatch "stopFetching" action', () => {
             expect(saga.next().value).toMatchInlineSnapshot(`
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "type": "STOP_FETCHING",
-    },
-    "channel": null,
-  },
-}
-`);
+                Object {
+                    "@@redux-saga/IO": true,
+                    "PUT": Object {
+                        "action": Object {
+                        "type": "STOP_FETCHING",
+                        },
+                        "channel": null,
+                    },
+                }
+            `);
         });
 
         test('should finish', () => {
