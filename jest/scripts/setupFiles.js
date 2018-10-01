@@ -42,6 +42,10 @@ const fetchResponseSuccess = {
     json:   jest.fn(() => Promise.resolve(responseDataSuccess)),
 };
 
+const fetchResponseSuccess204 = {
+    status: 204,
+};
+
 const responseUsersDataSuccess = {
     data:    users,
     message: successMesasge,
@@ -84,6 +88,7 @@ global.__ = {
     responseDataSuccess,
     responseDataFail,
     fetchResponseSuccess,
+    fetchResponseSuccess204,
     fetchResponseFail401,
     fetchResponseFail400,
     fetchUsersResponseSuccess,
