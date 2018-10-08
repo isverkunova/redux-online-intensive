@@ -57,7 +57,7 @@ export default class NewPassword extends Component {
                     const buttonStyle = cx(Styles.loginSubmit, {
                         [Styles.disabledButton]: isFetching,
                     });
-                    const buttonMessage = isFetching ? 'Загрузка...' : 'Сменить пароль';
+                    const buttonMessage = isFetching ? 'Loading...' : 'Change password';
 
                     return (
                         <Form className = { Styles.form }>
@@ -67,14 +67,14 @@ export default class NewPassword extends Component {
                                         className = { oldPasswordStyle }
                                         disabled = { isFetching }
                                         name = 'oldPassword'
-                                        placeholder = 'Старый пароль'
+                                        placeholder = 'Old password'
                                         type = 'password'
                                     />
                                     <Field
                                         className = { newPasswordStyle }
                                         disabled = { isFetching }
                                         name = 'newPassword'
-                                        placeholder = 'Новый пароль'
+                                        placeholder = 'New password'
                                         type = 'password'
                                     />
                                     <button
@@ -85,7 +85,7 @@ export default class NewPassword extends Component {
                                         {buttonMessage}
                                     </button>
                                 </div>
-                                <Link to = { book.profile }>← назад</Link>
+                                <Link to = { book.profile }>← back</Link>
                             </div>
                         </Form>
                     );

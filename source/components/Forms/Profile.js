@@ -50,13 +50,13 @@ export default class Profile extends Component {
         const buttonStyle = cx(Styles.loginSubmit, {
             [Styles.disabledButton]: isFetching,
         });
-        const buttonMessage = isFetching ? 'Загрузка...' : 'Обновить профиль';
+        const buttonMessage = isFetching ? 'Loading...' : 'Update profile';
 
         return (
             <Form className = { Styles.form } model = 'forms.user.profile' onSubmit = { this._submitUserInfo }>
                 <div className = { Styles.wrapper }>
                     <div>
-                        <h1>Привет, {profile.get('firstName')}</h1>
+                        <h1>Hello, {profile.get('firstName')}</h1>
                         <img src = { profile.get('avatar') } />
                         <Control.file
                             className = { Styles.fileInput }
@@ -65,14 +65,14 @@ export default class Profile extends Component {
                             model = 'forms.user.profile.avatar'
                             name = 'file'
                         />
-                        <label htmlFor = 'file'>Выбери новый аватар</label>
+                        <label htmlFor = 'file'>Choose a new avatar</label>
                         <Input
                             disabled = { isFetching }
                             disabledStyle = { Styles.disabledInputRedux }
                             id = 'forms.user.profile.firstName'
                             invalidStyle = { Styles.invalidInput }
                             model = 'forms.user.profile.firstName'
-                            placeholder = 'Имя'
+                            placeholder = 'First name'
                             validators = { {
                                 valid: (name) => !validateLength(name, 1),
                             } }
@@ -83,7 +83,7 @@ export default class Profile extends Component {
                             id = 'forms.user.profile.lastName'
                             invalidStyle = { Styles.invalidInput }
                             model = 'forms.user.profile.lastName'
-                            placeholder = 'Фамилия'
+                            placeholder = 'Second name'
                             validators = { {
                                 valid: (lastName) => !validateLength(lastName, 1),
                             } }
@@ -92,7 +92,7 @@ export default class Profile extends Component {
                             {buttonMessage}
                         </button>
                     </div>
-                    <Link to = { book.newPassword }>сменить пароль →</Link>
+                    <Link to = { book.newPassword }>change password →</Link>
                 </div>
             </Form>
         );

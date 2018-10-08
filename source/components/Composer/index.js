@@ -49,7 +49,7 @@ export default class Composer extends Component {
                                     type = 'text'
                                     onKeyPress = { this._submitFormOnEnter }
                                 />
-                                <input type = 'submit' value = 'Запостить' />
+                                <input type = 'submit' value = 'Post' />
                             </Form>
                         </section>
                     );

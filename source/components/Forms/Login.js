@@ -51,7 +51,7 @@ export default class LoginForm extends Component {
                     const buttonStyle = cx(Styles.loginSubmit, {
                         [Styles.disabledButton]: isFetching,
                     });
-                    const buttonMessage = isFetching ? 'Загрузка...' : 'Войти';
+                    const buttonMessage = isFetching ? 'Loading...' : 'Log in';
 
                     return (
                         <Form className = { Styles.form }>
@@ -61,19 +61,19 @@ export default class LoginForm extends Component {
                                         className = { emailStyle }
                                         disabled = { isFetching }
                                         name = 'email'
-                                        placeholder = 'Почта'
+                                        placeholder = 'E-mail'
                                         type = 'email'
                                     />
                                     <Field
                                         className = { passwordStyle }
                                         disabled = { isFetching }
                                         name = 'password'
-                                        placeholder = 'Пароль'
+                                        placeholder = 'Password'
                                         type = 'password'
                                     />
                                     <label className = { Styles.rememberMe }>
                                         <Field checked = { props.values.remember } name = 'remember' type = 'checkbox' />
-                                        Запомнить меня
+                                        Remember me
                                     </label>
                                     <button className = { buttonStyle } disabled = { isFetching } type = 'submit'>
                                         {buttonMessage}

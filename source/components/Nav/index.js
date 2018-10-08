@@ -39,22 +39,22 @@ export default class Nav extends Component {
                         {profile.get('firstName')}
                     </NavLink>
                     <NavLink activeClassName = { Styles.active } to = { book.feed }>
-                        Стена
+                        Feed
                     </NavLink>
                 </div>
-                <button onClick = { this._logout }>Выйти</button>
+                <button onClick = { this._logout }>Log out</button>
             </>
             :
             <>
                 <div>
                     <NavLink activeClassName = { Styles.active } to = { book.login }>
-                        Войти
+                        Log in
                     </NavLink>
                     <NavLink activeClassName = { Styles.active } to = { book.signUp }>
-                        Создать аккаунт
+                        Create an account
                     </NavLink>
                 </div>
-                <button className = { Styles.hidden }>Выйти</button>
+                <button className = { Styles.hidden }>Log out</button>
             </>
         ;
     };
@@ -75,7 +75,7 @@ export default class Nav extends Component {
         return (
             <section className = { Styles.navigation }>
                 <div className = { statusStyle }>
-                    <div>{isOnline ? 'Онлайн' : 'Офлайн'}</div>
+                    <div>{isOnline ? 'Online' : 'Offline'}</div>
                     <span />
                 </div>
                 {navigation}

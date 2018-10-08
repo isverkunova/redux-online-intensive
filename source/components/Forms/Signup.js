@@ -60,7 +60,7 @@ export default class SignupForm extends Component {
                     const buttonStyle = cx(Styles.signupSubmit, {
                         [Styles.disabledButton]: isFetching,
                     });
-                    const buttonMessage = isFetching ? 'Загрузка...' : 'Создать аккаунт ✓';
+                    const buttonMessage = isFetching ? 'Loading...' : 'Create an account ✓';
 
                     return (
                         <Form className = { Styles.form }>
@@ -70,35 +70,35 @@ export default class SignupForm extends Component {
                                         className = { firstNameStyle }
                                         disabled = { isFetching }
                                         name = 'firstName'
-                                        placeholder = 'Имя'
+                                        placeholder = 'First name'
                                         type = 'text'
                                     />
                                     <Field
                                         className = { lastNameStyle }
                                         disabled = { isFetching }
                                         name = 'lastName'
-                                        placeholder = 'Фамилия'
+                                        placeholder = 'Second name'
                                         type = 'text'
                                     />
                                     <Field
                                         className = { emailStyle }
                                         disabled = { isFetching }
                                         name = 'email'
-                                        placeholder = 'Почта'
+                                        placeholder = 'E-mail'
                                         type = 'email'
                                     />
                                     <Field
                                         className = { passwordStyle }
                                         disabled = { isFetching }
                                         name = 'password'
-                                        placeholder = 'Пароль'
+                                        placeholder = 'Password'
                                         type = 'password'
                                     />
                                     <Field
                                         className = { inviteStyle }
                                         disabled = { isFetching }
                                         name = 'invite'
-                                        placeholder = 'Секретное слово'
+                                        placeholder = 'Secret word'
                                         type = 'password'
                                     />
                                     <button className = { buttonStyle } disabled = { isFetching } type = 'submit'>
